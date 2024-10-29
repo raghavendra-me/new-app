@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I2F Student Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-primary {
+            background-color: #012e40;
+        }
+
+        .bg-secondary {
+            background-color: #19766b;
+        }
+
+        .text-primary {
+            color: #026773;
+        }
+
+        .text-secondary {
+            color: #19766b;
+        }
+
+        .hover-bg-secondary:hover {
+            background-color: #19766b;
+        }
+
+        .transition-colors {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+
+        .carousel-image {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+    <header class="bg-primary text-white p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8 max-w-7xl">
+            <div class="flex items-center space-x-2">
+                <img src="white-logo.png" alt="I2F Logo" class="w-16 h-16">
+                <span class="text-xl md:text-2xl font-bold">I2F Student Services</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-secondary transition-colors duration-300">Home</a></li>
+                    <li><a href="#" class="hover:text-secondary transition-colors duration-300">Services</a></li>
+                    <li><a href="#" class="hover:text-secondary transition-colors duration-300">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="mobileMenuButton" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <nav id="mobileMenu" class="md:hidden mt-4 hidden">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="#" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Home</a></li>
+                <li><a href="#" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Services</a></li>
+                <li><a href="#" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">About Us</a></li>
+                <li><a href="contact.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="bg-primary text-white py-16 md:py-40 relative">
+            <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('/placeholder.svg?height=800&width=1200'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+            <div class="container mx-auto text-center relative z-20 px-4 md:px-8 max-w-7xl">
+                <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    All the way with you, from India to France
+                </h1>
+                <p class="text-base md:text-xl mb-8 max-w-3xl mx-auto">
+                    ANYTHING YOU'RE LOOKING FOR, FROM FINDING THE PERFECT UNIVERSITY
+                    TO AN EASIER WAY TO OPEN A BANK ACCOUNT, I2F CAN HELP YOU!
+                </p>
+                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                    BEGIN YOUR JOURNEY
+                </a>
+            </div>
+        </section>
+
+        <section class="py-8 md:py-12 bg-white">
+            <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
+                <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
+                    "Friends in the same boat as you are not consultants. Consultants are never in the same boat as you."
+                </p>
+                <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
+                    Around 98% of students moving to France choose one and miss out on the other.
+                </p>
+                <p class="text-base md:text-lg lg:text-xl italic font-bold text-secondary">
+                    Be better. Choose both. Choose I2F
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <div class="flex items-center justify-center">
+                    <button id="prevSlide" class="mr-4 bg-secondary text-white p-2 rounded-full shadow-md" aria-label="Previous slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <div id="carouselContent" class="flex flex-col md:flex-row items-center w-full">
+                        <!-- Carousel content will be dynamically inserted here -->
+                    </div>
+                    <button id="nextSlide" class="ml-4 bg-secondary text-white p-2 rounded-full shadow-md" aria-label="Next slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-primary">All you need is just 3 steps to get from India to France</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-48 h-48 mb-4 relative">
+                            <img src="illustration1.svg" alt="Step 1" class="absolute inset-0 w-full h-full object-contain">
+                        </div>
+                        <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
+                            1
+                        </div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Fill in the form and choose your required services</h3>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-48 h-48 mb-4 relative">
+                            <img src="illustration2.svg" alt="Step 2" class="absolute inset-0 w-full h-full object-contain">
+                        </div>
+                        <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
+                            2
+                        </div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Discuss the requirements & submit necessary documents</h3>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-48 h-48 mb-4 relative">
+                            <img src="illustration3.svg" alt="Step 3" class="absolute inset-0 w-full h-full object-contain">
+                        </div>
+                        <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
+                            3
+                        </div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Experience a hassle free journey from India to France!</h3>
+                    </div>
+                </div>
+                <p class="text-center mt-8 md:mt-12 text-base md:text-lg italic text-gray-600">
+                    Hop on a free call with one of our student partners to know more.<br>
+                    No commitments, only love and support.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="w-full md:w-1/2 bg-primary text-white p-6 md:p-8 rounded-lg relative">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Client Testimonials</h2>
+                        <div id="testimonialContent" class="mb-4">
+                            <!-- Testimonial content will be dynamically inserted here -->
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex space-x-2">
+                            <button id="prevTestimonial" class="bg-white text-primary p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <button id="nextTestimonial" class="bg-white text-primary p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary">Tell us what you need!</h2>
+                        <p class="mb-6 text-gray-600 text-sm md:text-base">
+                            We'll reach out to you with seamless solutions
+                            and virtual high-fives! Not spam.
+                        </p>
+                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white py-6 md:py-8">
+        <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
+            <p class="text-sm md:text-base">&copy; 2023 I2F Student Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const  mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Carousel data
+        const carouselSlides = [
+            {
+                title: "Studying in France",
+                text: "I2F can help you find the perfect university for you after assessing your needs & analyzing your profile. We also go a step ahead, and guide you with creating an iron-clad application for the university to help you secure admissions.",
+                image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlbmNoJTIwdW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D"
+            },
+            {
+                title: "Preparing Yourself For The Big Move",
+                text: "You can focus on your goodbyes and mental preparation for moving abroad, while I2F takes care of applying for your visa, helping you find accommodation and guide you with all the documentation necessary to start living in your home away from home.",
+                image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFja2luZyUyMHN1aXRjYXNlfGVufDB8fDB8fHww"
+            },
+            {
+                title: "Settling In",
+                text: "I2F will ensure that your settling in process is seamless by taking care of all your documentation needs like visa validation, social security and CAF while also providing you with a welcome package which includes creating a bank account, sim card and all other provisions that can make your student life easier.",
+                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3R1ZGVudHMlMjBzZXR0bGluZyUyMGlufGVufDB8fDB8fHww"
+            }
+        ];
+
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            const carouselContent = document.getElementById('carouselContent');
+            const slide = carouselSlides[currentSlide];
+            carouselContent.innerHTML = `
+                <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <img src="${slide.image}" alt="${slide.title}" class="rounded-lg shadow-lg object-cover w-full carousel-image">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-2 text-primary">${slide.title}</h2>
+                    <div class="w-16 h-1 bg-secondary mb-4"></div>
+                    <p class="text-base md:text-lg text-gray-700 mb-6">${slide.text}</p>
+                    <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                        Learn More
+                    </a>
+                </div>
+            `;
+        }
+
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+            updateCarousel();
+        });
+
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % carouselSlides.length;
+            updateCarousel();
+        });
+
+        // Initialize carousel
+        updateCarousel();
+
+        // Testimonial data
+        const testimonials = [
+            {
+                text: "Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transaction were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my move was as smooth as possible. I can very confidently say that I2F went above and beyond to make this experience as seamless as possible. Thank you I2F!",
+                author: "Kalamathi Sivasankar",
+                school: "IESEG School of Management"
+            },
+            {
+                text: "From visa applications to cultural integration, their comprehensive support exceeded all my expectations.",
+                author: "Anjali K.",
+                school: "Engineering Student at École Polytechnique"
+            }
+        ];
+
+        let currentTestimonial = 0;
+
+        function updateTestimonial() {
+            const testimonialContent = document.getElementById('testimonialContent');
+            const testimonial = testimonials[currentTestimonial];
+            testimonialContent.innerHTML = `
+                <p class="italic mb-4 text-sm md:text-base">${testimonial.text}</p>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <p class="font-semibold">${testimonial.author}</p>
+                        <p class="text-xs md:text-sm">${testimonial.school}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
+        });
+
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonial();
+        });
+
+        // Initialize testimonial
+        updateTestimonial();
+    </script>
+</body>
+</html>
